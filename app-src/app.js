@@ -4,6 +4,8 @@ import { Negociacao } from './domain/index.js';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'bootstrap/dist/css/bootstrap-theme.css';
 
+import 'bootstrap/js/modal';
+
 const controller = new NegociacaoController();
 const negociacao = new Negociacao(new Date(), 1, 200);
 const headers = new Headers();
@@ -17,5 +19,5 @@ const config = {
     body 
 };
 
-fetch('http://localhost:3000/negociacoes', config)
+fetch(`${SERVICE_URL}/negociacoes`, config)
     .then(() => console.log('Dado enviado com sucesso'));
